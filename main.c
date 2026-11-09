@@ -1,30 +1,31 @@
+
 #include <stdio.h>
 
 int main(void)
 {
     int n;
     long total = 0;
-    int i = 1;
+    int i;
+
     scanf("%d", &n);
+
     if (n < 0)
     {
         printf("NG");
         return 0;
     }
-    while (1)
+
+    // 1からnまでの偶数を合計する
+    for (i = 1; i <= n; i++)
     {
-        if (i > n)
+        // 偶数の場合だけ合計に加える
+        if (i % 2 == 0)
         {
-            break;
+            total += i;
         }
-        if (i % 2 != 0)
-        {
-            i++;
-            continue;
-        }
-        total += i;
-        i++;
     }
+
     printf("%ld", total);
+
     return 0;
 }
